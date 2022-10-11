@@ -6,7 +6,11 @@ class Customer(models.Model):
    first_name = models.CharField(max_length= 20,null=True)
    middle_name = models.CharField(max_length= 20, null=True)
    last_name = models.CharField(max_length= 20,null=True)
-   gender = models.CharField(max_length= 10,null=True)
+   GENDER_CHOICES=(
+        ('M','Male'),
+        ('F','Female'),
+        ('O','Other'),
+    )
+   gender=models.CharField(max_length=1,choices=GENDER_CHOICES,null=True)
    age = models.PositiveSmallIntegerField()
-   phone_number = models.CharField(max_length= 15,null=True)
    id_number = models.IntegerField()
